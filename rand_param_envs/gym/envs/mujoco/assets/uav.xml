@@ -1,0 +1,15 @@
+<mujoco model="uav">
+    <worldbody>
+        <body name="uav_body" pos="0 0 0">
+            <geom type="sphere" size="0.1" density="500"/> <!-- 一个简单的球体代表无人机 -->
+            <joint name="x" type="slide" axis="1 0 0" limited="true" range="-5 5"/>
+            <joint name="y" type="slide" axis="0 1 0" limited="true" range="-5 5"/>
+            <joint name="yaw" type="hinge" axis="0 0 1"/>
+        </body>
+    </worldbody>
+    <actuator>
+        <motor joint="x" gear="1"/>
+        <motor joint="y" gear="1"/>
+        <motor joint="yaw" gear="1"/>
+    </actuator>
+</mujoco>
